@@ -32,6 +32,9 @@ function App() {
   const [idade, setIdade] = useState('')
   const [email, setEmail] = useState('')
 
+  const [showSuccessModal, setShowSuccessModal] = useState(false)
+  const [showDeleteModal, setShowDeleteModal] = useState(false)
+
   // Função executada ao enviar o formulario
   const handleSubmit = (e) => {
     // Evita da pagina recarregar
@@ -59,7 +62,15 @@ function App() {
     setIdade('')
     setEmail('')
 
+    // Exibir o modal de sucesso e oculta APOS 3 SEGUNDOS
+    setShowSuccessModal(true)
+    setTimeout(() => setShowSuccessModal(false), 3000)
+
   }
+
+  
+
+
 
   // Função de remoção de usuario
   const handleRemove = (id) => {
@@ -69,11 +80,25 @@ function App() {
 
     // Removendo usuario
     setUsers(prev => prev.filter(user => user.id !== id))
+
+    // Exibir o modal de deletado
+    setShowDeleteModal(true)
+    setTimeout(() => setShowDeleteModal(false), 3000)
   }
 
   
   return (
     <div className='container'>
+      {showSuccessModal && (
+        <div className="model sucess">
+          Usuário cadastrado com Sucesso!
+        </div>
+      )}
+      {showDeleteModal && (
+        <div className="modal delete">
+          Usuário deletado com sucesso!
+        </div>
+      )}
       <form className='formCadastro' onSubmit={handleSubmit}>
         <h1>Cadastro de Usuário</h1>
         <input placeholder='Nome' name='nome' type='text' value={nome} onChange={e => setNome(e.target.value)} // Atualizando estado nome 

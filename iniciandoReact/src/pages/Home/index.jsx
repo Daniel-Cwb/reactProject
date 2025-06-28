@@ -2,7 +2,6 @@ import { useState } from 'react'
 import './style.css'
 import Trash from '../../assets/react.svg'
 import CheckIcon from '../../assets/check.gif'
-import RemoveIcon from '../../assets/remove.gif'
 
 function App() {
   const [users, setUsers] = useState([

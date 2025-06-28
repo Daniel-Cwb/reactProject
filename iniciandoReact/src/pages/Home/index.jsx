@@ -1,6 +1,8 @@
 import { useState } from 'react'
 import './style.css'
 import Trash from '../../assets/react.svg'
+import CheckIcon from '../../assets/check.gif'
+import RemoveIcon from '../../assets/remove.gif'
 
 function App() {
   const [users, setUsers] = useState([
@@ -89,16 +91,6 @@ function App() {
   
   return (
     <div className='container'>
-      {showSuccessModal && (
-        <div className="model sucess">
-          Usuário cadastrado com Sucesso!
-        </div>
-      )}
-      {showDeleteModal && (
-        <div className="modal delete">
-          Usuário deletado com sucesso!
-        </div>
-      )}
       <form className='formCadastro' onSubmit={handleSubmit}>
         <h1>Cadastro de Usuário</h1>
         <input placeholder='Nome' name='nome' type='text' value={nome} onChange={e => setNome(e.target.value)} // Atualizando estado nome 
@@ -107,6 +99,18 @@ function App() {
         <input placeholder='Email' name='email' type='email' value={email} onChange={e => setEmail(e.target.value)}/>
         <button type='submit'>Cadastrar</button>
       </form>
+      {showSuccessModal && (
+        <div className="modal">
+          <img className='image' src={CheckIcon} alt='Delete' />
+          Usuário cadastrado com Sucesso!
+        </div>
+      )}
+      {showDeleteModal && (
+        <div className="modal">
+          <img className='image' src={CheckIcon} alt="Sucesso"/>
+          Usuário deletado com sucesso!
+        </div>
+      )}
       {users.map( user => (
         <div  key={user.id} className='card'>
           <div >

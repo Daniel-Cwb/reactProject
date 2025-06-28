@@ -1,0 +1,43 @@
+# node_modules: dependências instaladas (não versionar)
+node_modules/
+
+# build/output folders (como build ou dist, dependendo do bundler)
+build/
+dist/
+
+# arquivos de log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# arquivos de sistema
+.DS_Store
+Thumbs.db
+
+# ambiente local (variáveis sensíveis)
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# arquivos do editor/IDE
+.vscode/
+.idea/
+
+# cache de ferramentas
+.cache/
+.eslintcache
+.next/
+out/
+coverage/
+
+# arquivos do sistema operacional (ex: no Windows)
+*.swp
+*.swo
+
+# arquivos de lock (opcional, caso queira manter fixado o gerenciador)
+# package-lock.json
+# yarn.lock
+# pnpm-lock.yaml

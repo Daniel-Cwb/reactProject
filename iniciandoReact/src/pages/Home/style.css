@@ -1,0 +1,84 @@
+:root {
+  --repeat-color: #2e2d4e;
+  --white-color: #fff;
+
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 100px;
+  gap: 1rem;
+}
+
+h1 {
+  color: var(--white-color);
+  font-size: 26px;
+  text-align: center;
+}
+
+.formCadastro {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 2rem;
+  border-radius: 1rem;
+  background-color: var(--repeat-color);
+  max-width: 50%;
+  width: 25rem;
+  margin-bottom: 20px;
+
+  & button {
+    border-radius: 2rem;
+    background-color: #8B8ae1;
+    height: 2rem;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  & button:hover {
+    opacity: 0.5;
+  }
+
+  & input {
+    border: 1px solid #48456c;
+    border-radius: 2rem;
+    height: 2rem;
+    background-color: #363653;
+    color: #fff;
+    font-size: 1rem;
+    padding-left: 1rem;
+    outline: none;
+
+  }
+}
+
+.card {
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--repeat-color);
+  padding: 1rem;
+  width: 25rem;
+  border-radius: 1rem;
+
+  & p {
+    color: var(--white-color);
+    font-weight: bolder;
+
+    & span {
+      font-weight: normal;
+    }
+  }
+
+  & button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+  }
+
+  & button:hover {
+    opacity: 0.5;
+  }
+}
